@@ -9,7 +9,18 @@ import wind_icon from '../Assest/wind.png';
 import humidity from '../Assest/humidity.png';
 const WeatherApp = () => {
     return(
-        <div>
+        <div className='Contianer'>
+            <div className='top-bar'>
+                <input type="text" placeholder='Search' className='cityinput'/>
+                <div className='search-icon'>
+                    <img src={sreach_icon} alt="" className=' w-[25px]'/>
+                </div>
+            </div>
+            <div className='weather-image'>
+                <img src={ cloud_icon} alt="" className='w-[100px] h-[100px]'/>
+            </div>
+            <div className='weather-temp'>24°C</div>
+            <div className='weather-location'>London</div>
 
         </div>
 

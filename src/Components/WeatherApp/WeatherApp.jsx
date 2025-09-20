@@ -6,7 +6,7 @@ import drizzle_icon from '../Assest/Drizzle.png';
 import rain_icon from '../Assest/rain.png';
 import snow_cion from '../Assest/snow.png';
 import wind_icon from '../Assest/wind.png';
-import humidity from '../Assest/humidity.png';
+import humidity_icon from '../Assest/humidity.png';
 const WeatherApp = () => {
     return(
         <div className='Contianer'>
@@ -21,6 +21,22 @@ const WeatherApp = () => {
             </div>
             <div className='weather-temp'>24°C</div>
             <div className='weather-location'>London</div>
+            <div className='data-contianer'>
+                <div className='element'>
+                    <img src={humidity_icon} alt=""  className='icon w-[40px]' />
+                    <div className='data'>
+                        <div className='himudity-precent'>64%</div>
+                        <div className='text'>Humidity</div>
+                    </div>
+                </div>
+                <div className='element'>
+                    <img src={wind_icon} alt=""  className='icon w-[50px]' />
+                    <div className='data'>
+                        <div className='himudity-precent'>18 km/h</div>
+                        <div className='text'>Wind speed</div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 

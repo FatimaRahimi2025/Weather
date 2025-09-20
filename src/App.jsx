@@ -1,7 +1,10 @@
-import './assets/App.css'
+import WeatherApp from "./Components/WeatherApp/WeatherApp";
+
 function App() {
   return(
-    <h1 className="bg-red-500 font-bold">Welcome </h1>
+    <div>
+      <WeatherApp />
+    </div>
   )
 }
 export default App;

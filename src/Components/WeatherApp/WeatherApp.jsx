@@ -8,11 +8,23 @@ import snow_cion from '../Assest/snow.png';
 import wind_icon from '../Assest/wind.png';
 import humidity_icon from '../Assest/humidity.png';
 const WeatherApp = () => {
+    let api_key ="dd94f859a0e52d6e4767fddf735f04a7";
+    const Search = async () => {
+        const element = document.getElementsByClassName("cityinput");
+        if(element[0].value==="")
+        {
+            return 0;
+        }
+        let url =`https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`;
+
+
+    }
+}
     return(
         <div className='Contianer'>
             <div className='top-bar'>
                 <input type="text" placeholder='Search' className='cityinput'/>
-                <div className='search-icon'>
+                <div className='search-icon' onClick={() =>{Search()}}>
                     <img src={sreach_icon} alt="" className=' w-[25px]'/>
                 </div>
             </div>

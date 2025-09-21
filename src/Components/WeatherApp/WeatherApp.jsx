@@ -61,10 +61,9 @@ const WeatherApp = () => {
               setWicon(snow_cion);
         }
         else {
-            setWicon(sun_icon)
+            setWicon(sun_icon);
         }
-
-    }
+    };
     return(
         <div className='Contianer'>
             <div className='top-bar'>
@@ -94,7 +93,6 @@ const WeatherApp = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

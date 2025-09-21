@@ -7,6 +7,7 @@ import rain_icon from '../Assest/rain.png';
 import snow_cion from '../Assest/snow.png';
 import wind_icon from '../Assest/wind.png';
 import humidity_icon from '../Assest/humidity.png';
+
 const WeatherApp = () => {
     let api_key ="dd94f859a0e52d6e4767fddf735f04a7";
     const Search = async () => {
@@ -16,10 +17,20 @@ const WeatherApp = () => {
             return 0;
         }
         let url =`https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`;
-
+        
+        let response = await fetch(url);
+        let data = await response.json();
+        const humidity = document.getElementsByClassName("humidity-precent");
+        const wind = document.getElementsByClassName("wind-rate");
+        const temprature = document.getElementsByClassName("weather-temp");
+        const location = document.getElementsByClassName("weather-location");
+        
+        humidity[0].innerHTML = data.main.humidity;
+        wind[0].innerHTML = data.wind.speed;
+        temprature[0].innerHTML = data.main.temp;
+        location[0].innerHTML = data.name;
 
     }
-}
     return(
         <div className='Contianer'>
             <div className='top-bar'>
@@ -37,14 +48,14 @@ const WeatherApp = () => {
                 <div className='element'>
                     <img src={humidity_icon} alt=""  className='icon w-[40px]' />
                     <div className='data'>
-                        <div className='himudity-precent'>64%</div>
+                        <div className='humidity-precent'>64%</div>
                         <div className='text'>Humidity</div>
                     </div>
                 </div>
                 <div className='element'>
                     <img src={wind_icon} alt=""  className='icon w-[50px]' />
                     <div className='data'>
-                        <div className='himudity-precent'>18 km/h</div>
+                        <div className='wind-rate'>18 km/h</div>
                         <div className='text'>Wind speed</div>
                     </div>
                 </div>
@@ -54,5 +65,6 @@ const WeatherApp = () => {
 
     )
 }
+
 
 export default WeatherApp;
